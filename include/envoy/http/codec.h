@@ -27,6 +27,22 @@ const char MaxResponseHeadersCountOverrideKey[] =
 class Stream;
 
 /**
+ * fixfix
+ */
+class Http1StreamEncoderOptions {
+public:
+  virtual ~Http1StreamEncoderOptions() = default;
+
+  /**
+   * fixfix
+   */
+  virtual void disableChunkEncoding() PURE;
+};
+
+using Http1StreamEncoderOptionsOptRef =
+    absl::optional<std::reference_wrapper<Http1StreamEncoderOptions>>;
+
+/**
  * Encodes an HTTP stream. This interface contains methods common to both the request and response
  * path.
  * TODO(mattklein123): Consider removing the StreamEncoder interface entirely and just duplicating
@@ -53,6 +69,11 @@ public:
    * @param metadata_map_vector is the vector of metadata maps to encode.
    */
   virtual void encodeMetadata(const MetadataMapVector& metadata_map_vector) PURE;
+
+  /**
+   * fixfix
+   */
+  virtual Http1StreamEncoderOptionsOptRef http1StreamEncoderOptions() PURE;
 };
 
 /**

@@ -676,6 +676,11 @@ public:
    * @return the buffer limit the filter should apply.
    */
   virtual uint32_t encoderBufferLimit() PURE;
+
+  /**
+   * fixfix
+   */
+  virtual Http1StreamEncoderOptionsOptRef http1StreamEncoderOptions() PURE;
 };
 
 /**

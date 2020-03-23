@@ -49,6 +49,11 @@ public:
    * request.
    */
   virtual const Http::RequestHeaderMap& getRequestHeaders() const PURE;
+
+  /**
+   * fixfix
+   */
+  virtual Http::Http1StreamEncoderOptionsOptRef http1StreamEncoderOptions() PURE;
 };
 
 /**

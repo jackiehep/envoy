@@ -18,6 +18,7 @@ public:
   MOCK_METHOD(void, encodeData, (Buffer::Instance & data, bool end_stream));
   MOCK_METHOD(void, encodeMetadata, (const MetadataMapVector& metadata_map_vector));
   MOCK_METHOD(Stream&, getStream, ());
+  MOCK_METHOD(Http1StreamEncoderOptionsOptRef, http1StreamEncoderOptions, ());
 
   testing::NiceMock<MockStream> stream_;
 };
